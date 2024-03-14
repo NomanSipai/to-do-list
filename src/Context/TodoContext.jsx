@@ -6,6 +6,7 @@ export const TodoProvider = ({ children }) => {
   const [task, setTask] = useState("");
   const [completedTask, setCompletedTask] = useState("");
   const [taskList, setTaskList] = useState([]);
+  const [search, setSearch] = useState("");
   const [toggleUpBox, setToggleUpBox] = useState(false);
   const [editTask, setEditTask] = useState("");
   const [editIndex, setEditIndex] = useState(null);
@@ -107,6 +108,8 @@ export const TodoProvider = ({ children }) => {
         handlePopUpClose,
         handleChangeChecked,
         handleKey,
+        search,
+        setSearch,
       }}>
       {children}
     </TodoContext.Provider>

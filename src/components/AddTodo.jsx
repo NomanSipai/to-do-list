@@ -3,13 +3,13 @@ import TodoContext from "../Context/TodoContext";
 const AddTodo = () => {
   const { task, setTask, handleAddTodo, handleKey } = useContext(TodoContext);
   return (
-    <div>
+    <div className="w-3/4 me-auto ms-auto">
       <div className="flex items-center justify-center mt-14">
         <input
           type="text"
           name="price"
           id="price"
-          className="rounded-md border outline outline-[#96b59c] focus:outline-[#4a694f] py-2 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4a694f] sm:text-sm sm:leading-6 w-60"
+          className="rounded-md border outline w-full outline-[#96b59c] focus:outline-[#4a694f] py-2 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4a694f] sm:text-sm sm:leading-6 w-60"
           placeholder="Enter your tasks..."
           value={task}
           onChange={(e) => setTask(e.target.value)}

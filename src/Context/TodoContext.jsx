@@ -10,12 +10,18 @@ export const TodoProvider = ({ children }) => {
   const [toggleUpBox, setToggleUpBox] = useState(false);
   const [editTask, setEditTask] = useState("");
   const [editIndex, setEditIndex] = useState(null);
+  const [showTable, setShowTable] = useState("");
 
   const getData = async () => {
     await axios
       .get("https://65ab946afcd1c9dcffc699ac.mockapi.io/to-do-list-app")
       .then((res) => {
         setTaskList(res.data);
+        if (res.data.length === 0) {
+          setShowTable("hidden");
+        } else {
+          setShowTable("block");
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -90,6 +96,7 @@ export const TodoProvider = ({ children }) => {
   const handlePopUpClose = () => {
     setToggleUpBox(false);
   };
+
   return (
     <TodoContext.Provider
       value={{
@@ -110,6 +117,7 @@ export const TodoProvider = ({ children }) => {
         handleKey,
         search,
         setSearch,
+        showTable,
       }}>
       {children}
     </TodoContext.Provider>

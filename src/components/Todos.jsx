@@ -16,7 +16,7 @@ const Todos = () => {
   return (
     <div
       className={` md:w-3/4 ${showTable} me-auto ms-auto mt-16 bg-[#b4cab8] mb-10 rounded`}>
-      <div className="w-full bg-[#99b79e] font-bold text-xl p-3 mb-5 flex justify-between items-center">
+      <div className="w-full bg-[#99b79e] font-bold text-xl p-3 flex justify-between items-center">
         TASK LIST
         <input
           type="text"
@@ -28,7 +28,7 @@ const Todos = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className="p-5">
+      <div className="p-2">
         <div className="overflow-auto rounded-lg">
           <table className="w-full">
             <thead>

@@ -14,6 +14,10 @@ const UpdateBox = () => {
     <>
       {toggleUpBox && (
         <div className=" overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 bottom-0 m-auto z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+          <div
+            onClick={handlePopUpClose}
+            className="fixed inset-0 bg-black bg-opacity-75 transition-opacity"
+          />
           <div className="relative p-4 w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-2xl h-full md:h-auto">
             <div className="relative p-4 bg-[#4a694f] rounded-lg shadow sm:p-5">
               <div className="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-white">

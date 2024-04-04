@@ -11,6 +11,7 @@ export const TodoProvider = ({ children }) => {
   const [editTask, setEditTask] = useState("");
   const [editIndex, setEditIndex] = useState(null);
   const [showTable, setShowTable] = useState("");
+  const [showAlertPopUp, setAlertPopUp] = useState(false);
 
   const getData = async () => {
     await axios
@@ -62,6 +63,7 @@ export const TodoProvider = ({ children }) => {
       )
       .then(() => {
         getData();
+        setAlertPopUp(false);
       });
   };
 
@@ -118,6 +120,8 @@ export const TodoProvider = ({ children }) => {
         search,
         setSearch,
         showTable,
+        showAlertPopUp,
+        setAlertPopUp,
       }}>
       {children}
     </TodoContext.Provider>

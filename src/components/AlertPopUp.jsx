@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import TodoContext from "../Context/TodoContext";
 
-const AlertPopUp = ({ item }) => {
+const AlertPopUp = ({ popUpItem }) => {
   const { deleteTask, setAlertPopUp } = useContext(TodoContext);
   return (
     <div
@@ -10,7 +10,7 @@ const AlertPopUp = ({ item }) => {
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true">
-      <div className=" inset-0 fixed bg-black bg-opacity-30 transition-opacity" />
+      <div className=" inset-0 fixed bg-black bg-opacity-75 transition-opacity" />
 
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
@@ -36,7 +36,7 @@ const AlertPopUp = ({ item }) => {
                   <h3
                     className="text-base mt-2 font-semibold leading-6 text-gray-900"
                     id="modal-title">
-                    Are you sure you want to delete this {item.task}?
+                    Are you sure you want to delete this {popUpItem.task}?
                   </h3>
                   <div className="mt-2"></div>
                 </div>
@@ -52,7 +52,7 @@ const AlertPopUp = ({ item }) => {
               <button
                 type="button"
                 className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:me-3 sm:w-auto"
-                onClick={() => deleteTask(item)}>
+                onClick={() => deleteTask(popUpItem)}>
                 Yes, I'm sure
               </button>
             </div>

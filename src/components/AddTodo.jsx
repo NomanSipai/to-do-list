@@ -11,7 +11,7 @@ const AddTodo = () => {
           id="price"
           className="rounded-md border outline w-full outline-[#96b59c] focus:outline-[#4a694f] py-2 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#4a694f] sm:text-sm sm:leading-6 w-60"
           placeholder="Enter your tasks..."
-          autoComplete="false"
+          autoComplete="off"
           value={task}
           onChange={(e) => setTask(e.target.value)}
           onKeyDown={handleKey}

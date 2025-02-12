@@ -1,6 +1,4 @@
-import AddTodo from "./components/AddTodo";
 import Todos from "./components/Todos";
-import UpdateBox from "./components/UpdateBox";
 
 function App() {
   return (
@@ -8,8 +6,6 @@ function App() {
       <div className="bg-[#4a694f] p-5 text-white font-bold text-xl ">
         To Do List App
       </div>
-      <UpdateBox />
-      <AddTodo />
       <Todos />
     </div>
   );
